@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your phone is taking you away from God. Block your phone until you pray.">
+    <meta property="og:title" content="Prayer Lock">
+    <meta property="og:description" content="Block your phone until you pray">
+    <meta property="og:image" content="./app-icon.png">
+    <link rel="icon" type="image/png" href="./app-icon.png">
+    <title>Prayer Lock - Block Your Phone Until You Pray</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1C1C1E;
+            background: #FAF8F5;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        header {
+            display: none;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #7C5C3C;
+            letter-spacing: -0.5px;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 100px;
+            height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 24px;
+            margin-bottom: 24px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: #1C1C1E;
+            letter-spacing: -2px;
+        }
+
+        .highlight {
+            color: #D4A574;
+            display: block;
+            margin: 8px 0;
+        }
+
+        .cta-text {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1C1C1E;
+            margin: 10px 0 60px 0;
+            line-height: 1.3;
+        }
+
+        .pray-text {
+            color: #8B9E6B;
+        }
+        .button-group {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .app-button {
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .app-button:hover {
+            transform: translateY(-4px);
+            opacity: 0.85;
+        }
+
+        .app-button:first-child img {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        .app-button:last-child img {
+            height: 67px;
+            width: auto;
+            display: block;
+        }
+
+        .screenshots-container {
+            flex: 1;
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 800px;
+            max-width: 500px;
+        }
+
+        .screenshot {
+            position: absolute;
+            width: 280px;
+            height: 560px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25), 0 15px 40px rgba(0, 0, 0, 0.15);
+            border: 10px solid white;
+            animation: carouselCards 11s linear infinite;
+            transform-style: preserve-3d;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Carousel animation - shows each screenshot for ~3 seconds */
+        .screenshot-1 {
+            animation-delay: 0s;
+            z-index: 3;
+        }
+
+        .screenshot-2 {
+            animation-delay: -7.33s;
+            z-index: 1;
+        }
+
+        .screenshot-3 {
+            animation-delay: -3.67s;
+            z-index: 2;
+        }
+
+        @keyframes carouselCards {
+            0% {
+                opacity: 0;
+                transform: translateX(150px) rotateY(60deg) scale(0.5);
+            }
+            5% {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg) scale(1);
+            }
+            32% {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg) scale(1);
+            }
+            37% {
+                opacity: 0;
+                transform: translateX(-150px) rotateY(-60deg) scale(0.5);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(150px) rotateY(60deg) scale(0.5);
+            }
+        }
+
+        /* Footer */
+        footer {
+            display: none;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #8E8E93;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #7C5C3C;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            main {
+                gap: 60px;
+            }
+
+            .app-icon {
+                width: 70px;
+                height: 70px;
+                border-radius: 20px;
+                margin-bottom: 20px;
+            }
+
+            .content h1 {
+                font-size: 64px;
+            }
+
+            .cta-text {
+                font-size: 30px;
+            }
+
+            .screenshots-container {
+                height: 500px;
+            }
+
+            .screenshot {
+                width: 240px;
+                height: 480px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            main {
+                flex-direction: column;
+                gap: 40px;
+                height: 100vh;
+                justify-content: center;
+            }
+
+            .content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .app-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 18px;
+                margin-bottom: 16px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .content h1 {
+                font-size: 52px;
+            }
+
+            .cta-text {
+                font-size: 32px;
+            }
+
+            .screenshots-container {
+                display: none;
+            }
+
+            .button-group {
+                justify-content: center;
+            }
+
+            .app-button img {
+                height: 44px;
+                width: auto;
+            }
+
+            header {
+                padding: 20px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .app-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: 14px;
+                margin-bottom: 12px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .content h1 {
+                font-size: 44px;
+                margin-bottom: 24px;
+            }
+
+            .cta-text {
+                font-size: 28px;
+                margin: 24px 0 40px 0;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+
+            .app-button {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .app-button img {
+                height: 40px;
+                width: auto;
+            }
+
+            main {
+                height: 100vh;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">prayer lock</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="display: flex; align-items: center; gap: 100px; width: 100%;">
+            <div class="content">
+                <img src="./app-icon.png" alt="Prayer Lock App Icon" class="app-icon">
+                <h1>
+                    your phone is taking you
+                    <span class="highlight">away from God</span>
+                </h1>
+                <p class="cta-text">block your phone until you <span class="pray-text">pray</span></p>
+
+                <div class="button-group">
+                    <span href="https://apps.apple.com/app/prayer-lock/id6500000000" class="app-button" target="_blank" rel="noopener noreferrer">
+                        <img src="./apple.svg" alt="Download on the App Store">
+                    </span>
+                    <span href="https://play.google.com/store/apps/details?id=com.prayerlock.android" class="app-button" target="_blank" rel="noopener noreferrer">
+                        <img src="./google.svg" alt="Get it on Google Play">
+                    </span>
+                </div>
+            </div>
+
+            <div class="screenshots-container">
+                <div class="screenshot screenshot-1">
+                    <img src="./screenshot-1.png" alt="Prayer Lock App Screenshot 1">
+                </div>
+                <div class="screenshot screenshot-2">
+                    <img src="./screenshot-2.png" alt="Prayer Lock App Screenshot 2">
+                </div>
+                <div class="screenshot screenshot-3">
+                    <img src="./screenshot-3.png" alt="Prayer Lock App Screenshot 3">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#terms">Terms of Service</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#subscription">Manage Subscription</a>
+            </div>
+            <p>&copy; 2024 Prayer Lock. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
