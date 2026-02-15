@@ -170,11 +170,20 @@
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            font-size: inherit;
         }
 
         .app-button:hover {
             transform: translateY(-4px);
             opacity: 0.85;
+        }
+
+        .app-button:active {
+            outline: none;
         }
 
         .app-button:first-child img {
@@ -658,34 +667,6 @@
             display: block;
         }
 
-        .modal-content .or-text {
-            text-align: center;
-            margin: 24px 0;
-            color: #C7C7CC;
-            font-size: 14px;
-        }
-
-        .app-button-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            background: #F5F5F7;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            margin-bottom: 12px;
-        }
-
-        .app-button-link:hover {
-            background: #EBEBF0;
-        }
-
-        .app-button-link img {
-            height: 40px;
-            width: auto;
-        }
-
         @media (max-width: 599px) {
             .modal-content {
                 padding: 32px 24px;
@@ -815,17 +796,6 @@
                 <button type="submit" class="submit-btn" id="submitBtn">Join Waitlist</button>
                 <div class="form-message" id="formMessage"></div>
             </form>
-
-            <div class="or-text">or</div>
-
-            <div id="appLinks">
-                <a href="https://apps.apple.com/app/prayer-lock/id6758918601" class="app-button-link" target="_blank" rel="noopener noreferrer">
-                    <img src="./apple.svg" alt="Download on App Store">
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.prayerlock.android" class="app-button-link" target="_blank" rel="noopener noreferrer">
-                    <img src="./google.svg" alt="Get on Google Play">
-                </a>
-            </div>
         </div>
     </div>
 
