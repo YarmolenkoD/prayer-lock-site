@@ -1,4 +1,4 @@
-я User-agent: *
+User-agent: *
 Allow: /
 
 Sitemap: https://prayer-lock.com/sitemap.xml
