@@ -800,11 +800,6 @@
     </div>
 
     <script>
-        const EMAIL_OCTOPUS_CONFIG = {
-            apiKey: 'eo_a79f908fb674f27ad7661d32e9349ab0d2dc10d13119c346c1c7b0fb11951c53add',
-            listId: 'dd7e26a8-0afa-11f1-8e11-3b89881ff37d'
-        };
-
         let selectedPlatform = null;
 
         function openWaitlistModal(platform) {
@@ -830,32 +825,25 @@
             submitBtn.textContent = 'Adding...';
 
             try {
-                // Send to Email Octopus
-                const response = await fetch('https://emailoctopus.com/api/1.6/lists/' + EMAIL_OCTOPUS_CONFIG.listId + '/contacts', {
+                const response = await fetch('/api/subscribe', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        api_key: EMAIL_OCTOPUS_CONFIG.apiKey,
-                        email_address: email,
-                        tags: [selectedPlatform === 'ios' ? 'iOS' : 'Android']
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, platform: selectedPlatform })
                 });
 
                 const data = await response.json();
 
-                if (response.ok || data.error?.code === 'DUPLICATE_EMAIL') {
+                if (response.ok) {
                     formMessage.className = 'form-message success';
-                    formMessage.textContent = '✓ Email added! Check your inbox for confirmation.';
+                    formMessage.textContent = '✓ You\'re on the list! We\'ll notify you at launch.';
                     document.getElementById('waitlistForm').reset();
                     setTimeout(() => closeWaitlistModal(), 2000);
                 } else {
-                    throw new Error(data.error?.message || 'Failed to add email');
+                    throw new Error(data.error || 'Failed to subscribe');
                 }
             } catch (error) {
                 formMessage.className = 'form-message error';
-                formMessage.textContent = '✗ Error: ' + error.message + '. Please try again.';
+                formMessage.textContent = '✗ Something went wrong. Please try again.';
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Join Waitlist';
