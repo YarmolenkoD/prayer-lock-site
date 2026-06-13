@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Your Account &amp; Data — Prayer Lock</title>
+    <meta name="description" content="How to delete your Prayer Lock account and all associated data. Request deletion in the app or through the form on this page. Learn what data is deleted and what is retained.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FAF8F5">
+
+    <meta property="og:site_name" content="Prayer Lock">
+    <meta property="og:title" content="Delete Your Account & Data — Prayer Lock">
+    <meta property="og:description" content="Request deletion of your Prayer Lock account and all associated data.">
+    <meta property="og:image" content="https://prayer-lock.com/app-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prayer-lock.com/delete-account.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Delete Your Account & Data — Prayer Lock">
+    <meta name="twitter:description" content="Request deletion of your Prayer Lock account and all associated data.">
+    <meta name="twitter:image" content="https://prayer-lock.com/app-icon.png">
+
+    <link rel="canonical" href="https://prayer-lock.com/delete-account.html">
+    <link rel="icon" href="/app-icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/app-icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #1C1C1E;
+            background: #FAF8F5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #7C5C3C;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1C1C1E;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .last-updated {
+            color: #8E8E93;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1C1C1E;
+            margin: 40px 0 20px 0;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1C1C1E;
+            margin: 30px 0 15px 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #3C3C43;
+        }
+
+        ul, ol {
+            margin: 16px 0 16px 30px;
+            color: #3C3C43;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        strong {
+            color: #1C1C1E;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #FFF8E7;
+            padding: 20px;
+            border-left: 4px solid #D4A574;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #FAF8F5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #E5E5EA;
+        }
+
+        .data-table th {
+            background: #7C5C3C;
+            color: white;
+            font-weight: 600;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            margin: 20px 0 20px 0;
+            padding: 0;
+        }
+
+        .steps li {
+            position: relative;
+            padding: 0 0 0 48px;
+            margin-bottom: 16px;
+            min-height: 32px;
+        }
+
+        .steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: #7C5C3C;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        /* Deletion request form */
+        .delete-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: #FAF8F5;
+            border: 1px solid #E5E5EA;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 24px 0;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1C1C1E;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 16px;
+            border: 2px solid #E8E8ED;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            background: white;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #D4A574;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #C7C7CC;
+        }
+
+        .checkbox-group {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .checkbox-group input {
+            width: 20px;
+            height: 20px;
+            margin-top: 4px;
+            flex-shrink: 0;
+            accent-color: #7C5C3C;
+        }
+
+        .checkbox-group label {
+            font-weight: 400;
+            color: #3C3C43;
+            line-height: 1.5;
+        }
+
+        .submit-btn {
+            padding: 14px 24px;
+            background: #D4A574;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 4px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: #C29460;
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #E8F5E9;
+            color: #2E7D32;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #FFEBEE;
+            color: #C62828;
+            display: block;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background: #7C5C3C;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #6B4D2F;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #E5E5EA;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #8E8E93;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #7C5C3C;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.35rem;
+            }
+
+            .delete-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">prayer lock</div>
+            <h1>Delete Your Account &amp; Data</h1>
+            <p class="last-updated">Last Updated: June 13, 2026</p>
+        </header>
+
+        <main>
+            <section>
+                <p>This page explains how to delete your <strong>Prayer Lock</strong> account and all of the personal data associated with it. You can delete your account directly in the app, or — if you no longer have the app installed — request deletion using the form below.</p>
+
+                <div class="highlight">
+                    <strong>This action is permanent.</strong> Once your account is deleted, your prayer history, streaks, reflections, and profile cannot be recovered.
+                </div>
+            </section>
+
+            <section>
+                <h2>1. How to Request Deletion</h2>
+
+                <h3>Option A — Delete in the app (instant)</h3>
+                <p>If you still have Prayer Lock installed, this is the fastest way and takes effect immediately:</p>
+                <ol class="steps">
+                    <li>Open the <strong>Prayer Lock</strong> app.</li>
+                    <li>Go to the <strong>Profile</strong> (or <strong>Settings</strong>) tab.</li>
+                    <li>Tap <strong>Delete Account</strong>.</li>
+                    <li>Confirm. Your account and all associated data are permanently deleted right away.</li>
+                </ol>
+                <p style="color: #8E8E93; font-size: 0.95rem;">Using guest mode and don't have an email on your account? Use Option A before uninstalling the app — guest accounts can't be located by email, so the in-app button is the only way to remove a guest account's data.</p>
+
+                <h3>Option B — Request deletion here</h3>
+                <p>If you've already uninstalled the app, submit the form below. We will permanently delete your account and data <strong>within 30 days</strong> of receiving your request. Please use the same email address associated with your Prayer Lock account so we can locate it.</p>
+
+                <!--
+                  SETUP REQUIRED: This form posts to a DEDICATED Formspree endpoint, separate
+                  from the waitlist (mdalznrk) and contact (xwvnbkpy) forms, so deletion
+                  requests land in their own Formspree inbox.
+                  1. Create a new form at https://formspree.io (e.g. "Prayer Lock - Account Deletion").
+                  2. Copy its form ID (the part after /f/).
+                  3. Replace YOUR_DELETE_FORM_ID in the fetch() URL below.
+                -->
+                <form class="delete-form" id="deleteForm" onsubmit="handleDeleteSubmit(event)">
+                    <div class="form-group">
+                        <label for="deleteEmail">Account Email Address</label>
+                        <input
+                            type="email"
+                            id="deleteEmail"
+                            name="email"
+                            placeholder="your@email.com"
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="signInMethod">How did you sign in? (optional)</label>
+                        <select id="signInMethod" name="sign_in_method">
+                            <option value="">Select…</option>
+                            <option value="Apple">Apple</option>
+                            <option value="Google">Google</option>
+                            <option value="Email & password">Email &amp; password</option>
+                            <option value="Guest">Guest</option>
+                            <option value="Not sure">Not sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deleteNote">Note (optional)</label>
+                        <textarea
+                            id="deleteNote"
+                            name="note"
+                            placeholder="Anything that helps us locate your account…"
+                            rows="3"
+                        ></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="confirmDelete" name="confirmed" required>
+                        <label for="confirmDelete">I understand this will permanently delete my account and all associated data, and that it cannot be undone.</label>
+                    </div>
+                    <input type="hidden" name="_subject" value="Account Deletion Request — Prayer Lock">
+                    <button type="submit" class="submit-btn" id="deleteSubmitBtn">Request Account Deletion</button>
+                    <div class="form-message" id="deleteFormMessage"></div>
+                </form>
+            </section>
+
+            <section>
+                <h2>2. What Data Is Deleted</h2>
+                <p>When your account is deleted, all of the following is permanently removed from our systems. This is a hard delete and cannot be undone:</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>What Is Deleted</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Account Information</strong></td>
+                            <td>Email address, full name, and profile picture</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Prayer Session Data</strong></td>
+                            <td>Start/end times, durations, prayer type, and session origin</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mood &amp; Reflections</strong></td>
+                            <td>Mood ratings and personal prayer notes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Preferences</strong></td>
+                            <td>Daily prayer time, duration, notification settings, and selected apps to block</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Onboarding Responses</strong></td>
+                            <td>Age range, spiritual state, and prayer frequency answers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Streaks &amp; Statistics</strong></td>
+                            <td>Current streak, longest streak, total prayers, and last prayer date</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>3. What Is Kept, and for How Long</h2>
+                <p>To meet legal, security, and operational obligations, a limited amount of data may be retained after deletion:</p>
+                <ul>
+                    <li><strong>Personal account data:</strong> Permanently deleted <strong>within 30 days</strong> of your request (immediately when you use the in-app Delete Account button).</li>
+                    <li><strong>Crash &amp; diagnostic logs:</strong> Retained for up to <strong>90 days</strong> for debugging, then deleted.</li>
+                    <li><strong>Aggregated, anonymized statistics:</strong> Data that is no longer linked to you or your identity may be retained for analytics.</li>
+                    <li><strong>Legally required records:</strong> Any data we are required to keep by law (for example, to prevent fraud or abuse) is retained only for as long as the law requires.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Questions</h2>
+                <p>If you have any questions about deleting your account or data, contact us at <strong>support@prayer-lock.com</strong>. For full details on how we handle your information, see our <a href="privacy.html">Privacy Policy</a>.</p>
+            </section>
+
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="delete-account.html">Delete Account</a>
+                <a href="mailto:support@prayer-lock.com">Contact Us</a>
+            </div>
+            <p style="color: #8E8E93; font-size: 0.9rem;">&copy; 2026 Prayer Lock. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        async function handleDeleteSubmit(event) {
+            event.preventDefault();
+
+            const submitBtn = document.getElementById('deleteSubmitBtn');
+            const formMessage = document.getElementById('deleteFormMessage');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+
+            try {
+                const response = await fetch('https://formspree.io/f/mrevoawa', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: document.getElementById('deleteEmail').value,
+                        sign_in_method: document.getElementById('signInMethod').value,
+                        note: document.getElementById('deleteNote').value,
+                        confirmed: document.getElementById('confirmDelete').checked,
+                        _subject: 'Account Deletion Request — Prayer Lock'
+                    })
+                });
+
+                if (response.ok) {
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = '✓ Request received. Your account and data will be permanently deleted within 30 days.';
+                    document.getElementById('deleteForm').reset();
+                } else {
+                    throw new Error();
+                }
+            } catch {
+                formMessage.className = 'form-message error';
+                formMessage.textContent = '✗ Something went wrong. Please email support@prayer-lock.com instead.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Request Account Deletion';
+            }
+        }
+    </script>
+</body>
+</html>
