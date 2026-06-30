@@ -24,3 +24,12 @@
 - [Privacy Policy](https://prayer-lock.com/privacy.html): What data is and isn't collected.
 - [Terms and Conditions](https://prayer-lock.com/terms.html): User agreement.
 - [Delete Account & Data](https://prayer-lock.com/delete-account.html): How to remove your account and data.
+
+## Blog
+
+- [Blog index](https://prayer-lock.com/blog/): Articles on building a daily prayer habit and beating phone distraction.
+- [Pray first thing in the morning instead of scrolling](https://prayer-lock.com/blog/pray-before-checking-phone-morning.html)
+- [Best apps to build a daily prayer habit (2026)](https://prayer-lock.com/blog/best-apps-build-daily-prayer-habit.html)
+- [Use screen-time blocking to protect your quiet time](https://prayer-lock.com/blog/screen-time-blocking-protect-quiet-time.html)
+- [Why you check your phone before you pray — and how to break it](https://prayer-lock.com/blog/why-you-check-phone-before-you-pray.html)
+- [Does a prayer streak help consistency?](https://prayer-lock.com/blog/does-a-prayer-streak-help-consistency.html)
