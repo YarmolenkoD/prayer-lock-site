@@ -1,0 +1,26 @@
+# Prayer Lock
+
+> Prayer Lock is a free mobile app that blocks distracting apps on your phone until you pray. It helps people build a daily prayer habit, track a prayer streak, and reduce screen time by putting prayer before scrolling. Available now on iPhone (App Store); Android is in development.
+
+## What Prayer Lock does
+
+- **Blocks your phone until you pray.** You choose which apps to block (social media, news, games). They stay locked until you complete your prayer time, then unlock.
+- **Daily prayer streak.** Tracks consecutive days of prayer to keep you consistent.
+- **Reduces screen time.** Gating your most-used apps behind prayer naturally cuts doomscrolling.
+- **Prayer history & mood tracking.** Review past prayer sessions and how you felt over time.
+
+## Key facts
+
+- Price: Free
+- Platform: iOS (iPhone) — live. Android — in development (waitlist).
+- Audience: Christians and anyone who wants to make prayer a daily priority before reaching for their phone.
+- Privacy: Prayer Lock does not read the content of your prayers.
+- Website: https://prayer-lock.com/
+- App Store: https://apps.apple.com/ro/app/prayer-lock-quiet-time/id6758918601
+
+## Pages
+
+- [Home](https://prayer-lock.com/): What Prayer Lock is, how it works, features, and FAQ.
+- [Privacy Policy](https://prayer-lock.com/privacy.html): What data is and isn't collected.
+- [Terms and Conditions](https://prayer-lock.com/terms.html): User agreement.
+- [Delete Account & Data](https://prayer-lock.com/delete-account.html): How to remove your account and data.
