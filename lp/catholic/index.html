@@ -225,6 +225,10 @@
   }
   .badge:hover { background: #000; }
   .badge img { width: 22px; height: 22px; }
+  .app-button { display: inline-block; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; background: none; padding: 0; margin: 0; }
+  .app-button:hover { transform: translateY(-4px); opacity: 0.85; }
+  .app-button:active { outline: none; }
+  .app-button img { height: 70px; width: auto; display: block; }
   .waitlist {
     font-size: 15px;
     color: var(--muted);
@@ -340,9 +344,8 @@
     <h1>Keep your prayer rule before you touch your phone.</h1>
     <p class="subhead">Guard the morning offering, the rosary and the examen from the pull of distraction — let prayer be the first thing you give to the day.</p>
     <div class="cta">
-      <a class="badge" href="https://apps.apple.com/ro/app/prayer-lock-quiet-time/id6758918601" target="_blank" rel="noopener" aria-label="Download Prayer Lock on the App Store">
-        <img src="/apple.svg" alt="">
-        <span>Download on the App Store</span>
+      <a class="app-button" href="https://apps.apple.com/ro/app/prayer-lock-quiet-time/id6758918601" target="_blank" rel="noopener" aria-label="Download Prayer Lock on the App Store">
+        <img src="/apple.svg" alt="Download Prayer Lock on the App Store">
       </a>
       <span class="waitlist"><a href="/">Android coming soon — join the waitlist</a></span>
     </div>
