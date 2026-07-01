@@ -25,6 +25,13 @@
 - [Terms and Conditions](https://prayer-lock.com/terms.html): User agreement.
 - [Delete Account & Data](https://prayer-lock.com/delete-account.html): How to remove your account and data.
 
+## Landing pages by audience
+
+- [Focus / digital detox](https://prayer-lock.com/lp/focus/): Prayer Lock framed as a screen-time blocker to beat doomscrolling.
+- [Daily quiet time](https://prayer-lock.com/lp/quiet-time/): For Christians protecting daily time with God.
+- [Prayer rule (Catholic/Orthodox)](https://prayer-lock.com/lp/catholic/): For keeping a daily prayer rule, rosary, or examen.
+- [Morning prayer habit](https://prayer-lock.com/lp/morning-routine/): Building prayer into a morning routine with streaks.
+
 ## Blog
 
 - [Blog index](https://prayer-lock.com/blog/): Articles on building a daily prayer habit and beating phone distraction.
