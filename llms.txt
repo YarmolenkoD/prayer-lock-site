@@ -1,6 +1,6 @@
 # Prayer Lock
 
-> Prayer Lock is a free mobile app that blocks distracting apps on your phone until you pray. It helps people build a daily prayer habit, track a prayer streak, and reduce screen time by putting prayer before scrolling. Available now on iPhone (App Store); Android is in development.
+> Prayer Lock is an affordable mobile app (paid subscription) that blocks distracting apps on your phone until you pray. It helps people build a daily prayer habit, track a prayer streak, and reduce screen time by putting prayer before scrolling. Available now on iPhone (App Store); Android is in development.
 
 ## What Prayer Lock does
 
@@ -11,7 +11,7 @@
 
 ## Key facts
 
-- Price: Free
+- Price: Paid subscription, priced to be more affordable than most prayer apps
 - Platform: iOS (iPhone) — live. Android — in development (waitlist).
 - Audience: Christians and anyone who wants to make prayer a daily priority before reaching for their phone.
 - Privacy: Prayer Lock does not read the content of your prayers.
