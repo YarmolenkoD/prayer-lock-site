@@ -31,6 +31,42 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://prayer-lock.com/compare/</loc>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/hallow/</loc>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/pray-com/</loc>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/abide/</loc>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/echo-prayer/</loc>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/prayer-lock-christian-focus/</loc>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://prayer-lock.com/blog/</loc>
         <lastmod>2026-06-30</lastmod>
         <changefreq>weekly</changefreq>

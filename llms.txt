@@ -32,6 +32,17 @@
 - [Prayer rule (Catholic/Orthodox)](https://prayer-lock.com/lp/catholic/): For keeping a daily prayer rule, rosary, or examen.
 - [Morning prayer habit](https://prayer-lock.com/lp/morning-routine/): Building prayer into a morning routine with streaks.
 
+## Comparisons
+
+Most prayer apps are content apps (guided prayers, meditations, Bible audio, reminders). Prayer Lock is different — it blocks your distracting apps until you actually pray. Honest comparisons:
+
+- [Prayer Lock vs Hallow](https://prayer-lock.com/compare/hallow/)
+- [Prayer Lock vs Pray.com](https://prayer-lock.com/compare/pray-com/)
+- [Prayer Lock vs Abide](https://prayer-lock.com/compare/abide/)
+- [Prayer Lock vs Echo Prayer](https://prayer-lock.com/compare/echo-prayer/)
+- [Prayer Lock vs "Prayer Lock: Christian Focus"](https://prayer-lock.com/compare/prayer-lock-christian-focus/): two different apps with the same name, explained.
+- [All comparisons](https://prayer-lock.com/compare/)
+
 ## Blog
 
 - [Blog index](https://prayer-lock.com/blog/): Articles on building a daily prayer habit and beating phone distraction.
