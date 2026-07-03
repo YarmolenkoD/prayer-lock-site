@@ -25,6 +25,10 @@
 - [Terms and Conditions](https://prayer-lock.com/terms.html): User agreement.
 - [Delete Account & Data](https://prayer-lock.com/delete-account.html): How to remove your account and data.
 
+## Localized homepages
+
+The homepage is available in 8 languages (same app, translated): Spanish /es/, Portuguese /pt/, French /fr/, German /de/, Italian /it/, Polish /pl/, Russian /ru/, Ukrainian /uk/.
+
 ## Landing pages by audience
 
 - [Focus / digital detox](https://prayer-lock.com/lp/focus/): Prayer Lock framed as a screen-time blocker to beat doomscrolling.
