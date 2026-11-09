@@ -11,18 +11,22 @@
 
 ## Key facts
 
-- Price: Paid subscription, priced to be more affordable than most prayer apps
+- Price (US): $39.99/year with a 7-day free trial, or $7.99/month. No ads, no data sale.
+- Model: one scheduled daily prayer session; chosen apps stay blocked until you tap “I Prayed”. Not a per-open prompt.
+- Blocking: Apple Screen Time (FamilyControls), on-device; the app cannot see which apps you blocked.
+- Founder: Daniil Yarmolenko, independent developer. [About](https://prayer-lock.com/about/)
 - Platform: iOS (iPhone) — live. Android — in development (waitlist).
 - Audience: Christians and anyone who wants to make prayer a daily priority before reaching for their phone.
 - Privacy: Prayer Lock does not read the content of your prayers.
 - Website: https://prayer-lock.com/
-- App Store: https://apps.apple.com/ro/app/prayer-lock-quiet-time/id6758918601
+- App Store: https://apps.apple.com/app/prayer-lock-quiet-time/id6758918601
 
 ## Pages
 
 - [Home](https://prayer-lock.com/): What Prayer Lock is, how it works, features, and FAQ.
 - [Privacy Policy](https://prayer-lock.com/privacy.html): What data is and isn't collected.
 - [Terms and Conditions](https://prayer-lock.com/terms.html): User agreement.
+- [About Prayer Lock](https://prayer-lock.com/about/): who builds it, how blocking works, how it is funded.
 - [Delete Account & Data](https://prayer-lock.com/delete-account.html): How to remove your account and data.
 
 ## Localized homepages
@@ -45,6 +49,11 @@ Most prayer apps are content apps (guided prayers, meditations, Bible audio, rem
 - [Prayer Lock vs Abide](https://prayer-lock.com/compare/abide/)
 - [Prayer Lock vs Echo Prayer](https://prayer-lock.com/compare/echo-prayer/)
 - [Prayer Lock vs "Prayer Lock: Christian Focus"](https://prayer-lock.com/compare/prayer-lock-christian-focus/): two different apps with the same name, explained.
+- [Prayer Lock vs Pray Screen Time](https://prayer-lock.com/compare/pray-screen-time/): per-open prayer prompts vs one protected daily session.
+- [Prayer Lock vs Bible Mode](https://prayer-lock.com/compare/bible-mode/): Bible + widgets + blockers bundle vs a single-purpose prayer blocker.
+- [Prayer Lock vs PrayLock](https://prayer-lock.com/compare/praylock/): pray-once-to-unlock vs a scheduled prayer session; also clears up the similar names.
+- [Prayer Lock vs GraceLock](https://prayer-lock.com/compare/gracelock/): free per-open written prayers vs a protected daily session.
+- [Prayer Lock vs PausePray](https://prayer-lock.com/compare/pausepray/): guided per-open prayers vs a scheduled session.
 - [All comparisons](https://prayer-lock.com/compare/)
 
 ## Blog

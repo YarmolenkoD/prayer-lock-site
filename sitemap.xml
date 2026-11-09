@@ -80,37 +80,37 @@
     </url>
     <url>
         <loc>https://prayer-lock.com/compare/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prayer-lock.com/compare/hallow/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prayer-lock.com/compare/pray-com/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prayer-lock.com/compare/abide/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prayer-lock.com/compare/echo-prayer/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://prayer-lock.com/compare/prayer-lock-christian-focus/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -158,7 +158,7 @@
     </url>
     <url>
         <loc>https://prayer-lock.com/blog/best-apps-build-daily-prayer-habit.html</loc>
-        <lastmod>2026-06-30</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -197,5 +197,41 @@
         <lastmod>2026-06-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/pray-screen-time/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/bible-mode/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/praylock/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/gracelock/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/compare/pausepray/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://prayer-lock.com/about/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 </urlset>
