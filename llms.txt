@@ -20,6 +20,8 @@
 - Privacy: Prayer Lock does not read the content of your prayers.
 - Website: https://prayer-lock.com/
 - App Store: https://apps.apple.com/app/prayer-lock-quiet-time/id6758918601
+- Wikidata: https://www.wikidata.org/wiki/Q142090834
+- Also listed on: AlternativeTo (alternativeto.net/software/prayer-lock/), SaaSHub (saashub.com/prayer-lock), PeerPush (peerpush.com/p/prayer-lock-hizt)
 
 ## Pages
 
