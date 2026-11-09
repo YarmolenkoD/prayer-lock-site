@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building an iOS app blocker with the Screen Time API (FamilyControls) in Expo — Prayer Lock</title>
+    <meta name="description" content="What Apple's docs don't tell you about FamilyControls, ManagedSettings and DeviceActivity: entitlements, the 15-minute floor, extensions with no console, and why the shield button can't open your app.">
+    <meta name="author" content="Daniil Yarmolenko">
+    <meta name="theme-color" content="#FAF8F5">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:site_name" content="Prayer Lock">
+    <meta property="og:title" content="Building an iOS app blocker with the Screen Time API (FamilyControls) in Expo: what the docs don't tell you">
+    <meta property="og:description" content="What Apple's docs don't tell you about FamilyControls, ManagedSettings and DeviceActivity: entitlements, the 15-minute floor, extensions with no console, and why the shield button can't open your app.">
+    <meta property="og:image" content="https://prayer-lock.com/app-icon.png">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://prayer-lock.com/blog/ios-screen-time-api-app-blocker.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Building an iOS app blocker with the Screen Time API (FamilyControls) in Expo">
+    <meta name="twitter:description" content="What Apple's docs don't tell you about FamilyControls, ManagedSettings and DeviceActivity: entitlements, the 15-minute floor, extensions with no console, and why the shield button can't open your app.">
+    <meta name="twitter:image" content="https://prayer-lock.com/app-icon.png">
+
+    <link rel="canonical" href="https://prayer-lock.com/blog/ios-screen-time-api-app-blocker.html">
+    <link rel="alternate" hreflang="en" href="https://prayer-lock.com/blog/ios-screen-time-api-app-blocker.html">
+    <link rel="alternate" hreflang="x-default" href="https://prayer-lock.com/blog/ios-screen-time-api-app-blocker.html">
+    <link rel="icon" href="/app-icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/app-icon.png">
+    <meta name="apple-itunes-app" content="app-id=6758918601">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Building an iOS app blocker with the Screen Time API (FamilyControls) in Expo: what the docs don't tell you",
+        "description": "What Apple's docs don't tell you about FamilyControls, ManagedSettings and DeviceActivity: entitlements, the 15-minute floor, extensions with no console, and why the shield button can't open your app.",
+        "image": "https://prayer-lock.com/app-icon.png",
+        "datePublished": "2026-11-09",
+        "dateModified": "2026-11-09",
+        "author": { "@type": "Person", "name": "Daniil Yarmolenko", "url": "https://prayer-lock.com/about/" },
+        "publisher": { "@type": "Organization", "name": "Prayer Lock", "logo": { "@type": "ImageObject", "url": "https://prayer-lock.com/app-icon.png" } },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://prayer-lock.com/blog/ios-screen-time-api-app-blocker.html" },
+        "isPartOf": { "@type": "Blog", "name": "Prayer Lock Blog", "url": "https://prayer-lock.com/blog/" },
+        "proficiencyLevel": "Expert",
+        "dependencies": "iOS 16+, FamilyControls, ManagedSettings, DeviceActivity, Expo Modules"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7; color: #1C1C1E; background: #FAF8F5;
+        }
+        .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        .topbar { padding: 28px 0; }
+        .topbar a { color: #7C5C3C; text-decoration: none; font-weight: 700; font-size: 15px; }
+        article { padding: 16px 0 40px; }
+        article h1 {
+            font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 800; letter-spacing: -1.5px;
+            line-height: 1.15; color: #1C1C1E; margin-bottom: 14px;
+        }
+        .byline { color: #8E8E93; font-size: 14px; margin-bottom: 36px; }
+        article h2 {
+            font-size: 1.55rem; font-weight: 800; letter-spacing: -0.5px; color: #1C1C1E;
+            margin: 40px 0 14px;
+        }
+        article p { margin-bottom: 20px; font-size: 1.08rem; color: #2C2C2E; }
+        article ul, article ol { margin: 0 0 20px 22px; }
+        article li { margin-bottom: 10px; font-size: 1.08rem; color: #2C2C2E; }
+        article strong { color: #1C1C1E; }
+        article a { color: #7C5C3C; }
+        .lead { font-size: 1.18rem; color: #5C5C62; }
+        .cta-box {
+            background: #fff; border: 1px solid rgba(124,92,60,0.16); border-radius: 18px;
+            padding: 28px; text-align: center; margin: 44px 0;
+        }
+        .cta-box h3 { font-size: 1.3rem; font-weight: 800; color: #1C1C1E; margin-bottom: 8px; }
+        .cta-box p { color: #5C5C62; margin-bottom: 18px; }
+        .cta-box a {
+            display: inline-block; background: #D4A574; color: #fff; text-decoration: none;
+            font-weight: 700; padding: 14px 32px; border-radius: 12px; transition: background 0.2s ease;
+        }
+        .cta-box a:hover { background: #C29460; }
+        footer { border-top: 1px solid rgba(124,92,60,0.14); padding: 32px 0; text-align: center; }
+        .footer-links { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+        .footer-links a { color: #6B6B70; text-decoration: none; font-size: 14px; }
+        .footer-links a:hover { color: #7C5C3C; }
+        .copy { color: #8E8E93; font-size: 12px; }
+            article pre { background: #1C1C1E; color: #F5EFE6; padding: 16px 18px; border-radius: 12px; overflow-x: auto; font-size: 0.9rem; line-height: 1.5; margin: 0 0 18px; }
+        article code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }
+        article p code, article li code { background: rgba(124,92,60,0.10); padding: 1px 5px; border-radius: 5px; color: #5C3D22; }
+        article pre code { background: none; padding: 0; color: inherit; }
+        article ol { margin: 0 0 18px 22px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="topbar"><a href="/blog/">&larr; Prayer Lock Blog</a></div>
+        <article>
+            <h1>Building an iOS app blocker with the Screen Time API (FamilyControls) in Expo: what the docs don't tell you</h1>
+            <p class="byline">By <a href="/about/">Daniil Yarmolenko</a> · November 2026 · Also on <a href="https://dev.to/yarmolenkod" rel="noopener">dev.to</a></p>
+<p>I spent the last few months building <a href="https://prayer-lock.com/">Prayer Lock</a>, an iPhone app that blocks distracting apps during a scheduled daily prayer time. The whole product rests on Apple's Screen Time API: <code>FamilyControls</code>, <code>ManagedSettings</code> and <code>DeviceActivity</code>. The documentation is thin and the sharp edges are real. This is the write-up I wish I had on day one.</p>
+<p>The app is React Native (Expo) with a native Swift module, but almost everything below applies to a pure Swift app too.</p>
+<h2>The three frameworks and who does what</h2>
+<ul>
+<li><strong>FamilyControls</strong> – authorization and the system app picker (<code>FamilyActivityPicker</code>). You never see bundle IDs; you get opaque <code>ApplicationToken</code>s.</li>
+<li><strong>ManagedSettings</strong> – the actual blocking. <code>ManagedSettingsStore().shield.applications = tokens</code> puts a system shield over those apps. Setting it to <code>nil</code> removes it.</li>
+<li><strong>DeviceActivity</strong> – schedules. <code>DeviceActivityCenter.startMonitoring</code> wakes an <strong>extension</strong> at interval start and end, even when your app is dead.</li>
+</ul>
+<p>Plus two extension points for the shield itself: <code>ShieldConfigurationDataSource</code> (how the shield looks) and <code>ShieldActionDelegate</code> (what its buttons do).</p>
+<h2>1. Authorization: individual, not parental</h2>
+<pre><code class="language-swift">import FamilyControls
+
+try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+</code></pre>
+<p><code>.individual</code> is what you want for a self-control app. <code>.child</code> is for parental controls and requires Family Sharing. The entitlement <code>com.apple.developer.family-controls</code> must be requested from Apple through a form, and it's granted per bundle ID, so <strong>every app extension needs its own approval</strong>. Budget a week.</p>
+<h2>2. Tokens live in an App Group, not your database</h2>
+<p><code>FamilyActivitySelection</code> is <code>Codable</code>, but the tokens inside are only meaningful on the device that produced them. Don't sync them to your backend. Store the selection in the shared container so extensions can read it:</p>
+<pre><code class="language-swift">static let appGroupId = &quot;group.com.prayerlock.ios.shared&quot;
+
+func saveSelection(_ selection: FamilyActivitySelection) {
+    let defaults = UserDefaults(suiteName: Self.appGroupId)
+    defaults?.set(try? JSONEncoder().encode(selection), forKey: &quot;selectedAppsData&quot;)
+}
+</code></pre>
+<p>Every extension and the main app share one <code>ManagedSettingsStore()</code> keyed by the app group, so whoever applies the shield, the others see the same state.</p>
+<h2>3. Scheduling: the 15-minute floor and the dead-app problem</h2>
+<pre><code class="language-swift">let schedule = DeviceActivitySchedule(
+    intervalStart: DateComponents(hour: 7, minute: 0),
+    intervalEnd:   DateComponents(hour: 7, minute: 30),
+    repeats: true
+)
+try DeviceActivityCenter().startMonitoring(.prayerTime, during: schedule)
+</code></pre>
+<p>Things that cost me time:</p>
+<ul>
+<li><strong>Minimum interval is 15 minutes.</strong> A "lock for 5 minutes" session still has to be scheduled as 15; you unblock early from the app when the session completes.</li>
+<li><strong>Your app is not running when the interval fires.</strong> The work happens in a <code>DeviceActivityMonitor</code> extension:</li>
+</ul>
+<pre><code class="language-swift">class PrayerActivityMonitor: DeviceActivityMonitor {
+    private let store = ManagedSettingsStore()
+
+    override func intervalDidStart(for activity: DeviceActivityName) {
+        guard let selection = AppBlockingManager.shared.loadSelection(),
+              !hasPrayedToday() else { return }
+        store.shield.applications = selection.applicationTokens
+        store.shield.applicationCategories = .specific(selection.categoryTokens)
+    }
+
+    override func intervalDidEnd(for activity: DeviceActivityName) {
+        store.shield.applications = nil
+        store.shield.applicationCategories = nil
+    }
+}
+</code></pre>
+<ul>
+<li>Extensions have <strong>no console you can see</strong>. Write your own log to the app group (<code>UserDefaults</code> array) and add a hidden screen in the app that dumps it. I would not have shipped without this.</li>
+<li>The simulator doesn't render shields and often doesn't fire monitors on time. Test on a device.</li>
+</ul>
+<h2>4. The shield button cannot open your app. Full stop.</h2>
+<p>This is the one everyone hits. Your <code>ShieldActionDelegate</code> gets <code>handle(action:for:completionHandler:)</code> and may respond with <code>.none</code>, <code>.close</code> or <code>.defer</code>. There is no <code>UIApplication</code>, no <code>NSExtensionContext</code>, no URL opening. Apple Developer Forums thread 719905 and several Feedbacks confirm it across iOS 16–26. The private-API hacks you'll find on Stack Overflow don't work and will get you rejected.</p>
+<p>What does work: the extension <strong>can post a local notification</strong>, and the user tapping that notification is the one sanctioned path back into your app.</p>
+<pre><code class="language-swift">override func handle(action: ShieldAction, for application: ApplicationToken,
+                     completionHandler: @escaping (ShieldActionResponse) -&gt; Void) {
+    switch action {
+    case .primaryButtonPressed:
+        let defaults = UserDefaults(suiteName: appGroupId)
+        defaults?.set(true, forKey: &quot;shieldRequestedPrayer&quot;)
+        defaults?.set(Date().timeIntervalSince1970, forKey: &quot;shieldRequestedPrayerAt&quot;)
+
+        let content = UNMutableNotificationContent()
+        content.title = &quot;Time to pray&quot;
+        content.body = &quot;Tap to start your prayer.&quot;
+        content.interruptionLevel = .timeSensitive
+        UNUserNotificationCenter.current().add(
+            UNNotificationRequest(identifier: &quot;shield-prayer&quot;, content: content, trigger: nil))
+
+        completionHandler(.close)
+    default:
+        completionHandler(.defer)
+    }
+}
+</code></pre>
+<p>Then, in the app, on <code>AppState</code> becoming active, read and clear the flag (with a freshness window, say five minutes) and route straight into the session. Two bugs this design produced for me, both invisible in testing:</p>
+<ol>
+<li><strong>Notification permission was never requested</strong> on the path where users enabled blocking. Without it the button looks dead. Ask for notifications the moment Screen Time is granted, and show a banner with a Settings link if denied. <code>.timeSensitive</code> needs its own entitlement on the app <em>and</em> the shield-action extension.</li>
+<li><strong>Cold-start race.</strong> My auth store set <code>user</code> before the profile finished loading; the shield consumer pushed the session screen, then the root redirect replaced it with Home. Gate the consumer on "auth fully loaded", not on "user exists".</li>
+</ol>
+<h2>5. The shield is a tint, not a background</h2>
+<p><code>ShieldConfiguration.backgroundColor</code> is blended over the system material. A saturated orange renders as pale peach on device, and the simulator won't show you. Design the shield with dark text on a light base, use <code>backgroundBlurStyle: .systemUltraThinMaterialLight</code>, and put your brand color on the button, not behind the text. Localize the copy inside the extension; it doesn't see your app's i18n.</p>
+<h2>6. Wrapping it for Expo</h2>
+<p>The module is a standard Expo Module (<code>expo-module.config.json</code> + Swift). The pieces that need care:</p>
+<ul>
+<li>A <strong>config plugin</strong> adds the Family Controls entitlement and the App Group to the main target. Extensions still have to be created in Xcode by hand; config plugins can't add targets, so keep extension sources in a <code>extensions/</code> folder and copy them into <code>ios/</code> on prebuild.</li>
+<li>Wrap <code>requireNativeModule</code> in <code>try/catch</code> and fall back to a no-op implementation so Expo Go and Android builds don't crash.</li>
+<li>Expose the picker as a native view (<code>FamilyActivityPicker</code> inside a SwiftUI <code>UIHostingController</code>) with an <code>onSelectionChange</code> event; the JS side only ever learns the count.</li>
+</ul>
+<pre><code class="language-ts">AsyncFunction(&quot;scheduleBlocking&quot;) { (hour: Int, minute: Int, durationMinutes: Int, bufferMinutes: Int) -&gt; Bool in
+  ScheduleManager.shared.schedule(hour: hour, minute: minute,
+                                  duration: durationMinutes, buffer: bufferMinutes)
+}
+</code></pre>
+<h2>What I'd tell past me</h2>
+<ul>
+<li>Apply for the entitlement first; everything else can wait for it.</li>
+<li>Treat the App Group as the single source of truth and the extensions as the real runtime.</li>
+<li>Design around "the shield cannot open the app" from day one. The notification handoff is fine once the permission is in place.</li>
+<li>Build the hidden log screen before the first TestFlight.</li>
+</ul>
+<p>If you're building in this space, the Apple forums thread above is the best place to add your voice; the more Feedbacks on the shield-to-app handoff, the better the odds it changes.</p>
+<p><em>I'm the developer of Prayer Lock. Everything above is from shipping it; corrections welcome in the comments.</em></p>
+        </article>
+        <footer>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/blog/">Blog</a>
+                <a href="/compare/">Comparisons</a>
+                <a href="/about/">About</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+            </div>
+            <p class="copy">&copy; 2026 Prayer Lock. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

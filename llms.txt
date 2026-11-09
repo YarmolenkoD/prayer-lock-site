@@ -70,4 +70,5 @@ Most prayer apps are content apps (guided prayers, meditations, Bible audio, rem
 - [How to start a morning devotional routine](https://prayer-lock.com/blog/morning-devotional-routine-guide.html)
 - [A Christian digital detox guide](https://prayer-lock.com/blog/christian-digital-detox-guide.html)
 - [Breaking phone addiction as a Christian](https://prayer-lock.com/blog/christian-phone-addiction-help.html)
+- [Building an iOS app blocker with the Screen Time API (for developers)](https://prayer-lock.com/blog/ios-screen-time-api-app-blocker.html)
 - [What the Bible says about phones and distraction](https://prayer-lock.com/blog/bible-verses-about-phones-and-distraction.html)
