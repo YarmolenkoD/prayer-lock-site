@@ -102,79 +102,6 @@
     }
     </script>
 
-    <!-- Structured Data: FAQPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Czym jest Prayer Lock?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Prayer Lock to aplikacja mobilna, która blokuje rozpraszające aplikacje w Twoim telefonie, dopóki nie zakończysz czasu modlitwy. Pomaga zbudować codzienny nawyk modlitwy, śledzić serię modlitw i ograniczyć czas przed ekranem, stawiając modlitwę przed przewijaniem."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "W jaki sposób Prayer Lock blokuje mój telefon?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ty wybierasz, które aplikacje chcesz zablokować. Gdy próbujesz otworzyć jedną z nich, Prayer Lock ją blokuje i zachęca Cię do modlitwy. Gdy zakończysz czas modlitwy i oznaczysz go jako ukończony, aplikacje się odblokują."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Czy Prayer Lock jest darmowy?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Nie — Prayer Lock to płatna subskrypcja, w cenie bardziej przystępnej niż większość aplikacji do modlitwy."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Czy Prayer Lock jest dostępny na iPhone i Androida?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Prayer Lock jest już dostępny na iPhone w App Store. Wersja na Androida jest w przygotowaniu — zapisz się na listę oczekujących, aby otrzymać powiadomienie, gdy pojawi się w Google Play."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Czy Prayer Lock jest aplikacją chrześcijańską?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Prayer Lock został stworzony z myślą o modlitwie chrześcijańskiej, ale sprawdzi się u każdego, kto chce uczynić modlitwę codziennym priorytetem. To Ty decydujesz, jak wygląda Twój czas modlitwy."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Czy Prayer Lock czyta lub śledzi moje modlitwy?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Nie. Prayer Lock nie czyta treści Twoich modlitw. Twoje modlitwy pozostają prywatne."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Czym Prayer Lock różni się od zwykłej aplikacji do kontroli czasu przed ekranem?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Typowa aplikacja do kontroli czasu przed ekranem po prostu ogranicza lub blokuje korzystanie z telefonu. Prayer Lock wiąże odblokowanie z aktem duchowym — modlisz się, aby odzyskać dostęp — zamieniając blokadę w narzędzie budujące codzienny nawyk modlitwy, z seriami i historią."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Dlaczego warto blokować telefon, dopóki się nie pomodlę?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Większość ludzi sprawdza telefon, zanim się pomodli, pozwalając, by to powiadomienia nadawały ton całemu dniu. Blokowanie telefonu, dopóki się nie pomodlisz, odwraca tę kolejność, dzięki czemu pierwsze chwile spędzasz z Bogiem, a nie z aktualnościami."
-                }
-            }
-        ]
-    }
-    </script>
     <style>
         * {
             margin: 0;
@@ -308,75 +235,80 @@
             display: block;
         }
 
-        .screenshots-container {
+        .hero-device {
             flex: 1;
             position: relative;
-            height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
-            perspective: 800px;
-            max-width: 500px;
+            max-width: 520px;
+            height: 720px;
         }
 
-        .screenshot {
+        .hero-device::before {
+            content: "";
             position: absolute;
-            width: 280px;
+            width: 560px;
             height: 560px;
+            border-radius: 50%;
+            background: radial-gradient(closest-side, rgba(242, 150, 90, 0.55), rgba(212, 165, 116, 0.28) 55%, transparent 100%);
+            filter: blur(34px);
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .device {
+            position: relative;
+            width: 300px;
+            height: 644px;
+            padding: 11px;
+            border-radius: 51px;
+            background: linear-gradient(145deg, #3a3a3e, #121214 40%, #2a2a2e);
+            box-shadow:
+                0 60px 120px -30px rgba(70, 35, 10, 0.5),
+                0 30px 50px -30px rgba(0, 0, 0, 0.45),
+                inset 0 0 0 2px #4a4a50;
+            animation: heroFloat 7s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .device::before {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            border-radius: 46px;
+            box-shadow: inset 0 0 0 4px #0a0a0b;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .device-screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
             border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25), 0 15px 40px rgba(0, 0, 0, 0.15);
-            border: 10px solid white;
-            animation: carouselCards 11s linear infinite;
-            transform-style: preserve-3d;
-            will-change: transform, opacity;
-            backface-visibility: hidden;
+            background: #1B2A4A;
+            transform: translateZ(0);
         }
 
-        .screenshot img {
+        .device-screen video,
+        .device-screen img {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
 
-        /* Carousel animation - shows each screenshot for ~3 seconds */
-        .screenshot-1 {
-            animation-delay: 0s;
-            z-index: 3;
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
         }
 
-        .screenshot-2 {
-            animation-delay: -7.33s;
-            z-index: 1;
-        }
-
-        .screenshot-3 {
-            animation-delay: -3.67s;
-            z-index: 2;
-        }
-
-        @keyframes carouselCards {
-            0% {
-                opacity: 0;
-                transform: translateX(150px) rotateY(60deg) scale(0.5);
-            }
-            5% {
-                opacity: 1;
-                transform: translateX(0) rotateY(0deg) scale(1);
-            }
-            32% {
-                opacity: 1;
-                transform: translateX(0) rotateY(0deg) scale(1);
-            }
-            37% {
-                opacity: 0;
-                transform: translateX(-150px) rotateY(-60deg) scale(0.5);
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(150px) rotateY(60deg) scale(0.5);
-            }
+        @media (prefers-reduced-motion: reduce) {
+            .device { animation: none; }
         }
 
         /* Footer */
@@ -454,21 +386,21 @@
                 border-radius: 20px;
             }
 
-            .screenshots-container {
-                height: 500px;
-                max-width: 400px;
+            .hero-device {
+                height: 620px;
+                max-width: 420px;
             }
 
-            .screenshot {
-                width: 240px;
-                height: 480px;
+            .device {
+                width: 260px;
+                height: 554px;
             }
         }
 
         /* Small tablets and large phones (600px - 767px) */
         @media (max-width: 767px) {
             main {
-                padding: 60px 0 120px;
+                padding: 60px 0 48px;
             }
 
             .main-wrapper-container {
@@ -512,19 +444,25 @@
                 height: 50px;
             }
 
-            /*.screenshots-container {*/
-            /*    height: 450px;*/
-            /*    max-width: 350px;*/
-            /*}*/
-
-            .screenshots-container {
-                display: none;
+            .hero-device {
+                height: auto;
+                max-width: 100%;
+                padding: 24px 0 8px;
             }
 
-            .screenshot {
-                width: 200px;
-                height: 400px;
+            .hero-device::before {
+                width: 420px;
+                height: 420px;
             }
+
+            .device {
+                width: 240px;
+                height: 509px;
+                border-radius: 44px;
+            }
+
+            .device::before { border-radius: 39px; }
+            .device-screen { border-radius: 33px; }
 
             footer {
                 padding: 20px 0;
@@ -539,7 +477,7 @@
         /* Mobile phones (up to 599px) */
         @media (max-width: 599px) {
             main {
-                padding: 40px 0 120px;
+                padding: 40px 0 40px;
             }
 
             .main-wrapper {
@@ -550,10 +488,6 @@
             .container {
                 padding: 0 20px;
             }
-
-            /*.screenshots-container {*/
-            /*    display: none;*/
-            /*}*/
 
             .app-icon {
                 width: 56px;
@@ -815,138 +749,21 @@
                 margin: 8px 0 32px 0;
             }
 
-            .screenshots-container {
-                display: flex;
-                height: 350px;
+            .hero-device {
+                height: 380px;
                 max-width: 300px;
             }
 
-            @media (max-width: 767px) {
-                .screenshots-container {
-                    display: none;
-                }
+            .device {
+                width: 170px;
+                height: 353px;
+                border-radius: 34px;
             }
 
-            .screenshot {
-                width: 160px;
-                height: 320px;
-            }
+            .device::before { border-radius: 29px; }
+            .device-screen { border-radius: 23px; }
         }
 
-        /* Content sections (SEO / GEO) */
-        .section {
-            padding: 80px 0;
-            border-top: 1px solid rgba(124, 92, 60, 0.12);
-        }
-        .section-inner {
-            max-width: 920px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        .section h2 {
-            font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: #1C1C1E;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        .section .section-sub {
-            text-align: center;
-            color: #6B6B70;
-            font-size: 1.05rem;
-            max-width: 620px;
-            margin: 0 auto 48px auto;
-        }
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-        .step {
-            text-align: center;
-        }
-        .step-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #D4A574;
-            color: #fff;
-            font-weight: 800;
-            font-size: 1.25rem;
-            margin-bottom: 16px;
-        }
-        .step h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #1C1C1E;
-            margin-bottom: 8px;
-        }
-        .step p, .feature p {
-            color: #5C5C62;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px 40px;
-        }
-        .feature h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #7C5C3C;
-            margin-bottom: 6px;
-        }
-        .audience-copy {
-            max-width: 720px;
-            margin: 0 auto;
-            color: #5C5C62;
-            font-size: 1.08rem;
-            line-height: 1.7;
-            text-align: center;
-        }
-        .faq-list {
-            max-width: 760px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            border-bottom: 1px solid rgba(124, 92, 60, 0.14);
-            padding: 22px 0;
-        }
-        .faq-item h3 {
-            font-size: 1.12rem;
-            font-weight: 700;
-            color: #1C1C1E;
-            margin-bottom: 8px;
-        }
-        .faq-item p {
-            color: #5C5C62;
-            font-size: 1rem;
-            line-height: 1.65;
-        }
-        .section-cta {
-            text-align: center;
-            margin-top: 48px;
-        }
-        .section-cta a {
-            display: inline-block;
-            background: #D4A574;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 16px 36px;
-            border-radius: 14px;
-            transition: background 0.2s ease, transform 0.2s ease;
-        }
-        .section-cta a:hover {
-            background: #C29460;
-            transform: translateY(-2px);
-        }
         .footer-about {
             text-align: center;
             color: #8E8E93;
@@ -981,11 +798,6 @@
             line-height: 2;
         }
         .footer-variants a:hover { color: #D4A574; }
-        @media (max-width: 767px) {
-            .section { padding: 56px 0; }
-            .section-inner { padding: 0 24px; }
-            .steps, .features { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
@@ -1014,122 +826,20 @@
                     </div>
                 </div>
 
-                <div class="screenshots-container">
-                    <div class="screenshot screenshot-1">
-                        <img src="/screenshot-1.png" alt="Aplikacja Prayer Lock — ekran licznika modlitwy z licznikiem codziennej serii">
-                    </div>
-                    <div class="screenshot screenshot-2">
-                        <img src="/screenshot-2.png" alt="Aplikacja Prayer Lock — wybór aplikacji do zablokowania na czas modlitwy">
-                    </div>
-                    <div class="screenshot screenshot-3">
-                        <img src="/screenshot-3.png" alt="Aplikacja Prayer Lock — historia modlitw i śledzenie nastroju">
+                <div class="hero-device" aria-hidden="true">
+                    <div class="device">
+                        <div class="device-screen">
+                            <video autoplay muted loop playsinline preload="auto" poster="/hero/poster.jpg" width="720" height="1610" disablepictureinpicture disableremoteplayback>
+                                <source src="/hero/hero.webm" type="video/webm">
+                                <source src="/hero/hero.mp4" type="video/mp4">
+                                <img src="/hero/poster.jpg" alt="">
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- How it works -->
-        <section class="section" id="how-it-works">
-            <div class="section-inner">
-                <h2>Jak działa Prayer Lock</h2>
-                <p class="section-sub">Zamień swój telefon z rozpraszacza w codzienne przypomnienie o modlitwie. Skonfiguruj raz, a potem pozwól, by pomagał Ci być wiernym.</p>
-                <div class="steps">
-                    <div class="step">
-                        <span class="step-num">1</span>
-                        <h3>Wybierz aplikacje do zablokowania</h3>
-                        <p>Wskaż aplikacje, które Cię odciągają — media społecznościowe, wiadomości, gry. Prayer Lock zablokuje je, dopóki się nie pomodlisz.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">2</span>
-                        <h3>Twój telefon blokuje się, dopóki się nie pomodlisz</h3>
-                        <p>Gdy sięgasz po rozpraszającą aplikację, Prayer Lock Cię zatrzymuje i zaprasza do chwili modlitwy.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">3</span>
-                        <h3>Pomódl się, a potem odblokuj</h3>
-                        <p>Poświęć swój czas na modlitwę, oznacz ją jako ukończoną, a Twoje aplikacje się otworzą. Buduj serię i patrz, jak rośnie Twój nawyk.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section class="section" id="features">
-            <div class="section-inner">
-                <h2>Aplikacja do modlitwy, która chroni Twój czas wyciszenia</h2>
-                <p class="section-sub">Prayer Lock łączy blokadę czasu przed ekranem z codziennym licznikiem modlitw, aby nawyk naprawdę się utrwalił.</p>
-                <div class="features">
-                    <div class="feature">
-                        <h3>Zablokuj telefon, dopóki się nie pomodlisz</h3>
-                        <p>Sedno Prayer Lock: rozpraszające aplikacje pozostają zablokowane, dopóki nie zakończysz czasu modlitwy, dzięki czemu najpierw się modlisz, a nie najpierw przewijasz.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Codzienna seria modlitw</h3>
-                        <p>Śledź swoją serię modlitw dzień po dniu. Prosty licznik, który utrzymuje Cię w rytmie i motywuje, by każdego ranka stawać przed Bogiem.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Ogranicz czas przed ekranem</h3>
-                        <p>Ukrywając najczęściej używane aplikacje za modlitwą, Prayer Lock naturalnie skraca Twój czas przed ekranem i przerywa cykl bezmyślnego przewijania.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Historia modlitw i śledzenie nastroju</h3>
-                        <p>Spójrz wstecz na swoją historię modlitw i to, jak się czułeś w danym czasie. Zobacz, jak Twój duchowy nawyk zamienia się w trwały codzienny rytm.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Who it's for -->
-        <section class="section" id="who-its-for">
-            <div class="section-inner">
-                <h2>Dla kogo jest Prayer Lock</h2>
-                <p class="audience-copy">Prayer Lock jest dla każdego, kto sięga po telefon, zanim się pomodli. Jeśli chcesz zaczynać poranek od czasu wyciszenia zamiast od powiadomień, zbudować konsekwentny codzienny nawyk modlitwy lub po prostu spędzać mniej czasu przy telefonie, a więcej z Bogiem — Prayer Lock został stworzony dla Ciebie. To łagodne, praktyczne narzędzie dla chrześcijan i wszystkich, którzy pragną postawić modlitwę na pierwszym miejscu.</p>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="section" id="faq">
-            <div class="section-inner">
-                <h2>Najczęściej zadawane pytania</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <h3>Czym jest Prayer Lock?</h3>
-                        <p>Prayer Lock to aplikacja mobilna, która blokuje rozpraszające aplikacje w Twoim telefonie, dopóki nie zakończysz czasu modlitwy. Pomaga zbudować codzienny nawyk modlitwy, śledzić serię modlitw i ograniczyć czas przed ekranem, stawiając modlitwę przed przewijaniem.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>W jaki sposób Prayer Lock blokuje mój telefon?</h3>
-                        <p>Ty wybierasz, które aplikacje chcesz zablokować. Gdy próbujesz otworzyć jedną z nich, Prayer Lock ją blokuje i zachęca Cię do modlitwy. Gdy zakończysz czas modlitwy i oznaczysz go jako ukończony, aplikacje się odblokują.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Czy Prayer Lock jest darmowy?</h3>
-                        <p>Nie — Prayer Lock to płatna subskrypcja, w cenie bardziej przystępnej niż większość aplikacji do modlitwy.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Czy Prayer Lock jest dostępny na iPhone i Androida?</h3>
-                        <p>Prayer Lock jest już dostępny na iPhone w App Store. Wersja na Androida jest w przygotowaniu — zapisz się na listę oczekujących na tej stronie, aby otrzymać powiadomienie, gdy pojawi się w Google Play.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Czy Prayer Lock jest aplikacją chrześcijańską?</h3>
-                        <p>Prayer Lock został stworzony z myślą o modlitwie chrześcijańskiej, ale sprawdzi się u każdego, kto chce uczynić modlitwę codziennym priorytetem. To Ty decydujesz, jak wygląda Twój czas modlitwy.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Czy Prayer Lock czyta lub śledzi moje modlitwy?</h3>
-                        <p>Nie. Prayer Lock nie czyta treści Twoich modlitw. Twoje modlitwy pozostają prywatne. Zobacz naszą <a href="privacy.html">Politykę prywatności</a>, aby poznać pełne szczegóły dotyczące tego, jakie dane są, a jakie nie są zbierane.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Czym Prayer Lock różni się od zwykłej aplikacji do kontroli czasu przed ekranem?</h3>
-                        <p>Typowa aplikacja do kontroli czasu przed ekranem po prostu ogranicza lub blokuje korzystanie z telefonu. Prayer Lock wiąże odblokowanie z aktem duchowym — modlisz się, aby odzyskać dostęp — zamieniając blokadę w narzędzie budujące codzienny nawyk modlitwy, z seriami i historią.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Dlaczego warto blokować telefon, dopóki się nie pomodlę?</h3>
-                        <p>Większość ludzi sprawdza telefon, zanim się pomodli, pozwalając, by to powiadomienia nadawały ton całemu dniu. Blokowanie telefonu, dopóki się nie pomodlisz, odwraca tę kolejność, dzięki czemu pierwsze chwile spędzasz z Bogiem, a nie z aktualnościami.</p>
-                    </div>
-                </div>
-                <div class="section-cta">
-                    <a href="https://apps.apple.com/app/prayer-lock-quiet-time/id6758918601" target="_blank" rel="noopener">Pobierz Prayer Lock</a>
-                </div>
-            </div>
-        </section>
 
         <footer>
             <div class="container">
