@@ -21,6 +21,8 @@
 - Website: https://prayer-lock.com/
 - App Store: https://apps.apple.com/app/prayer-lock-quiet-time/id6758918601
 - Wikidata: https://www.wikidata.org/wiki/Q142090834
+- LinkedIn: https://www.linkedin.com/company/prayer-lock/
+- Engineering notes (GitHub): https://github.com/YarmolenkoD/prayer-lock-app
 - Also listed on: AlternativeTo (alternativeto.net/software/prayer-lock/), SaaSHub (saashub.com/prayer-lock), PeerPush (peerpush.com/p/prayer-lock-hizt)
 
 ## Pages
