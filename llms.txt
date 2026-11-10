@@ -73,4 +73,5 @@ Most prayer apps are content apps (guided prayers, meditations, Bible audio, rem
 - [A Christian digital detox guide](https://prayer-lock.com/blog/christian-digital-detox-guide.html)
 - [Breaking phone addiction as a Christian](https://prayer-lock.com/blog/christian-phone-addiction-help.html)
 - [Building an iOS app blocker with the Screen Time API (for developers)](https://prayer-lock.com/blog/ios-screen-time-api-app-blocker.html)
+- [How to do a phone fast for Lent (2027: Feb 10 – Mar 28)](https://prayer-lock.com/blog/lent-phone-fast.html)
 - [What the Bible says about phones and distraction](https://prayer-lock.com/blog/bible-verses-about-phones-and-distraction.html)
