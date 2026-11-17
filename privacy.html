@@ -248,7 +248,7 @@
         <header>
             <div class="logo">prayer lock</div>
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: February 12, 2026</p>
+            <p class="last-updated">Last Updated: November 17, 2026</p>
         </header>
 
         <main>
@@ -277,8 +277,13 @@
                     <tbody>
                         <tr>
                             <td><strong>Account Information</strong></td>
-                            <td>Email address, full name, profile picture</td>
-                            <td>Account creation and authentication via Apple/Google Sign In</td>
+                            <td>Email address, full name, profile picture (if you sign in with Apple or Google); a random account identifier if you continue as a guest</td>
+                            <td>Account creation and authentication via Apple/Google Sign In or guest mode</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subscription Status</strong></td>
+                            <td>Which Prayer Lock Pro plan you purchased, trial and renewal status, purchase history (no card or bank details)</td>
+                            <td>Unlock Pro features and restore purchases</td>
                         </tr>
                         <tr>
                             <td><strong>Prayer Session Data</strong></td>
@@ -311,8 +316,9 @@
                 <h3>1.2 Information Collected Automatically</h3>
                 <p>When you use Prayer Lock, we automatically collect:</p>
                 <ul>
-                    <li><strong>Device Information:</strong> Device type, operating system version, app version</li>
-                    <li><strong>Usage Data:</strong> App interactions, feature usage, crash reports</li>
+                    <li><strong>Device Information:</strong> Device type, operating system version, app version, and app-generated identifiers (an analytics ID and a purchase ID)</li>
+                    <li><strong>Usage Data:</strong> App interactions and feature usage (for example, starting or finishing a prayer, opening the paywall)</li>
+                    <li><strong>Diagnostics:</strong> Crash reports and error logs, including the device and app state at the time of the error</li>
                     <li><strong>Language Preferences:</strong> Your selected language for the app interface</li>
                     <li><strong>Notification Preferences:</strong> Whether you've enabled prayer reminders and streak notifications</li>
                 </ul>
@@ -326,7 +332,17 @@
                     <li>We do NOT see which apps you use outside of prayer sessions</li>
                 </ul>
 
-                <h3>1.4 Information We Do NOT Collect</h3>
+                <h3>1.4 Android App Blocking Permissions</h3>
+                <p>On Android, app blocking (a Prayer Lock Pro feature) works only after you turn on the following permissions in Android Settings. The app explains each one before sending you there, and prayer, streaks and reminders work without them:</p>
+                <ul>
+                    <li><strong>Usage Access:</strong> lets Prayer Lock notice when one of the apps you selected is opened while a prayer session or your scheduled prayer block is active</li>
+                    <li><strong>Display over other apps:</strong> lets Prayer Lock show the prayer screen on top of a blocked app</li>
+                    <li><strong>Alarms &amp; reminders (exact alarms):</strong> lets your scheduled prayer block start on time; without it, it may start a few minutes late</li>
+                    <li><strong>Foreground service and notification:</strong> keeps blocking running while a session is active and shows an ongoing notification so you always know it is on</li>
+                </ul>
+                <p>To show you the list of apps you can block, Prayer Lock reads the names and icons of apps installed on your device. The list of installed apps, the apps you select, and any app-usage information are processed only on your device. They are never sent to our servers or to any third party, and they are not used for analytics or advertising. You can turn these permissions off at any time in Android Settings.</p>
+
+                <h3>1.5 Information We Do NOT Collect</h3>
                 <p>We want to be clear about what we don't collect:</p>
                 <ul>
                     <li>The content of your prayers (unless you voluntarily save personal notes)</li>
@@ -334,7 +350,10 @@
                     <li>Contact lists or phone book data</li>
                     <li>Photos, videos, or media from your device</li>
                     <li>Browsing history or activity outside the app</li>
-                    <li>Financial information (payments are processed through app stores)</li>
+                    <li>Your list of installed apps or your app usage (on both iOS and Android this stays on your device)</li>
+                    <li>Microphone or camera input</li>
+                    <li>Advertising identifiers (we show no ads)</li>
+                    <li>Payment card or bank details (payments are processed by the Apple App Store or Google Play; we only receive your subscription status)</li>
                 </ul>
             </section>
 
@@ -398,6 +417,10 @@
                     <li><strong>Apple Sign In:</strong> Authentication service (provides email and name from your Apple ID)</li>
                     <li><strong>Google Sign In:</strong> Authentication service (provides email, name, and profile picture from your Google account)</li>
                     <li><strong>Expo Services:</strong> App development, deployment, and push notification infrastructure</li>
+                    <li><strong>Apple App Store and Google Play:</strong> Process subscription payments; we never see your payment details</li>
+                    <li><strong>RevenueCat:</strong> Manages subscriptions and validates purchases (receives purchase receipts, subscription status, and an app-generated purchase ID)</li>
+                    <li><strong>PostHog:</strong> Product analytics (receives app usage events including post-prayer mood and closeness ratings, device and app information, your App Store country, notification permission status, and your account ID and email if you are signed in), hosted in the United States</li>
+                    <li><strong>Sentry:</strong> Crash and error reporting (receives crash reports, device and app information, and your account ID and email if you are signed in)</li>
                 </ul>
 
                 <p>These providers are contractually required to:</p>
@@ -429,7 +452,8 @@
                     <li>Sell your personal information to advertisers or data brokers</li>
                     <li>Share your prayer notes or mood ratings publicly</li>
                     <li>Use your spiritual data for advertising purposes</li>
-                    <li>Share identifiable information with analytics companies</li>
+                    <li>Send the text of your prayer notes or your onboarding answers to analytics or crash-reporting providers</li>
+                    <li>Allow our analytics and crash-reporting providers to use your data for their own purposes or for advertising</li>
                 </ul>
             </section>
 
@@ -437,7 +461,7 @@
                 <h2>4. Data Storage and Security</h2>
 
                 <h3>4.1 Where We Store Your Data</h3>
-                <p>Your data is stored securely using Supabase, a PostgreSQL-based backend service with data centers in [specify region]. Data is encrypted both in transit and at rest.</p>
+                <p>Your data is stored securely using Supabase, a PostgreSQL-based backend service running on cloud infrastructure. Analytics and crash data are stored by PostHog and Sentry, and subscription data by RevenueCat. Data is encrypted both in transit and at rest.</p>
 
                 <h3>4.2 Security Measures</h3>
                 <p>We implement industry-standard security practices:</p>
@@ -497,6 +521,8 @@
                 <ul>
                     <li>Disable push notifications through app or device settings</li>
                     <li>Revoke Screen Time permissions through iOS Settings</li>
+                    <li>Revoke Usage Access, Display over other apps, and Alarms &amp; reminders through Android Settings</li>
+                    <li>Manage or cancel your subscription in your App Store or Google Play account settings</li>
                     <li>Choose which apps to block during prayer sessions</li>
                     <li>Opt out of optional data collection (onboarding questionnaire)</li>
                 </ul>
@@ -555,6 +581,9 @@
                     <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
                     <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
                     <li><a href="https://supabase.com/privacy" target="_blank">Supabase Privacy Policy</a></li>
+                    <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
+                    <li><a href="https://posthog.com/privacy" target="_blank">PostHog Privacy Policy</a></li>
+                    <li><a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></li>
                 </ul>
             </section>
 
@@ -572,11 +601,11 @@
                 </ul>
 
                 <h3>9.2 Analytics</h3>
-                <p>We may use privacy-focused analytics to understand app usage, but we:</p>
+                <p>We use PostHog product analytics and Sentry crash reporting to understand how the app is used and to fix problems. When you are signed in, these events are linked to your account ID and email so we can help you with support requests; guest usage is linked only to a random identifier. We:</p>
                 <ul>
-                    <li>Do not use third-party advertising trackers</li>
+                    <li>Do not use third-party advertising trackers or the device advertising ID</li>
                     <li>Do not share analytics data with advertisers</li>
-                    <li>Anonymize data before analysis</li>
+                    <li>Do not include the text of your prayer notes or your onboarding answers in analytics events (after a prayer, only the numeric mood and closeness ratings and whether a note was written are recorded)</li>
                 </ul>
 
                 <h3>9.3 Push Notification Tokens</h3>
